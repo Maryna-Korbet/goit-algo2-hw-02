@@ -63,3 +63,63 @@ python optimize_printing.py
 
 ```
 ---
+
+# Nask 2: Rod Cutting Problem — Dynamic Programming Solutions
+
+## Description
+
+This project implements solutions to the classic **Rod Cutting Problem** using **Dynamic Programming** with two approaches:
+
+- **Memoization** (top-down recursion with caching)
+- **Tabulation** (bottom-up dynamic programming)
+
+The problem is to determine the optimal way to cut a rod of a given length into pieces to maximize total profit, given a price list where the price depends on the length of each piece.
+
+
+## Problem Statement
+
+Given:
+- A rod of length `n`.
+- A list of prices `prices`, where `prices[i]` is the price of a rod segment of length `i + 1`.
+
+Find:
+- The maximum total revenue obtainable by cutting the rod and selling the pieces.
+- The exact lengths of the pieces to cut to achieve that maximum profit.
+- The total number of cuts made.
+
+
+## Technical Requirements
+
+- Input:
+  - `length` — an integer representing the rod length (`length > 0`).
+  - `prices` — a list of positive integers representing prices for each piece length; the list length equals `length`.
+
+- Output:
+  - A dictionary containing:
+    - `"max_profit"` — maximum achievable profit (int).
+    - `"cuts"` — list of piece lengths representing the optimal cutting plan.
+    - `"number_of_cuts"` — number of cuts performed (int).
+
+
+## Implementations
+
+Two functions are provided:
+
+### 1. `rod_cutting_memo(length: int, prices: List[int]) -> Dict`
+
+- Uses recursion with memoization to avoid redundant calculations.
+- Returns the optimal profit and cutting plan.
+
+### 2. `rod_cutting_table(length: int, prices: List[int]) -> Dict`
+
+- Uses bottom-up dynamic programming (tabulation).
+- Iteratively computes solutions for all smaller lengths up to `length`.
+- Returns the optimal profit and cutting plan.
+
+
+## How to Run
+
+Run the script directly to execute predefined test cases:
+
+```bash
+python rod_cutting.py
